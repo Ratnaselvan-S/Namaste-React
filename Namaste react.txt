@@ -1,10 +1,21 @@
-vs code -emmet (generate code for html doctype basic skeleton)
-
-cdn -homework
-
-crossorigin -homework
+One is dev dependencies and one is normal dependensies 
 
 
-first createelemt will return a object with props of attributes and childrend is just the content ,next we need to choose the document root to put the element here we use dome because that is not the place for react to be here we are just choosing where to put the element 
 
-next we put render here the object of the react create element is converted into browser understanding code where javascript runs 
+carrot and tilda in package.json minor and major update automatically
+
+package.json is keeps the config version of the package for npm
+
+package-lock.json keeps the current version locked so that it can run freely that is if some update came also the package.json may change but package.lock will have fixed version
+
+in package-lock there is integrity to verify the version on production site and from our local one
+
+
+node modules -when we install parcel the parcel is has dependencies (i.e) the parcel  cannot run on own it is dependent on some other packages 
+
+
+even if i delete the package.json and package-lock.json is there we can delete the node modules
+
+
+git origin means Url
+
