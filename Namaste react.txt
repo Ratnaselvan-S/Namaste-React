@@ -1,0 +1,10 @@
+vs code -emmet (generate code for html doctype basic skeleton)
+
+cdn -homework
+
+crossorigin -homework
+
+
+first createelemt will return a object with props of attributes and childrend is just the content ,next we need to choose the document root to put the element here we use dome because that is not the place for react to be here we are just choosing where to put the element 
+
+next we put render here the object of the react create element is converted into browser understanding code where javascript runs 
