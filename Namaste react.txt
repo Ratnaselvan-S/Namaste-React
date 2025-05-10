@@ -1,50 +1,19 @@
-One is dev dependencies and one is normal dependensies 
+npx parcel index.html -- instead of this i can put the parcel index.html in the package.json file and just put npm run start
 
 
-
-carrot and tilda in package.json minor and major update automatically
-
-package.json is keeps the config version of the package for npm
-
-package-lock.json keeps the current version locked so that it can run freely that is if some update came also the package.json may change but package.lock will have fixed version
-
-in package-lock there is integrity to verify the version on production site and from our local one
+jsx is like html like syntax in javascript file
 
 
-node modules -when we install parcel the parcel is has dependencies (i.e) the parcel  cannot run on own it is dependent on some other packages 
+const heading=<h1> hello worls</h1> here the javascript cannt understand the jsx syntax because javascript engine understands only es(ecma script) and here the jsx is converted
+into react element(object) it is done by parcel but parcel is a manager its dependensies such as babel is responsible for its conversion
 
 
-even if i delete the package.json and package-lock.json is there we can delete the node modules
+and babel also convert browser compactible js 
+
+give an attribute to jsx give it is camel casing
 
 
-git origin means Url
+component composition ---it is nothing but using two component i.e function inside a component
 
 
-library means we can use the small piece of code on our project but framework means we need to build the entire project from it
-
-
-
-npx execute the package which npm installed 
-
-the cdn is not a good way to use react because we need to put the network call and get the code from the cdn link that is unneccsary and may fail 
-but if we install it in npm then no network call needed we can easily get the package and aslo we need to upgrade if  react made on update so package.json does it automatically by carrot
-
-
-
-#parcel
--dev our project
--hist on a server
--HMR - hot module replacement
--file watching algorithm - written in c++
--caching it every time so the build is faster
--image optimization
--minification
--bundling
--compressing -it will remove all the spaces and optimize it as much  as it could during building
--consistent hashing ---homework
--code splitting
--Different bundle -support older version 
--diagonstic -like compiler
--error handling
--tree shaking-remove unused code 
--Different build for dev and production 
+while injecting any javascript code like '{} ' it usually escaapes that is it ssnitize the code so that the cross site scripting ccan be prevented
