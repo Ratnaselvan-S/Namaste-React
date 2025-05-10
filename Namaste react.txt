@@ -19,3 +19,32 @@ even if i delete the package.json and package-lock.json is there we can delete t
 
 git origin means Url
 
+
+library means we can use the small piece of code on our project but framework means we need to build the entire project from it
+
+
+
+npx execute the package which npm installed 
+
+the cdn is not a good way to use react because we need to put the network call and get the code from the cdn link that is unneccsary and may fail 
+but if we install it in npm then no network call needed we can easily get the package and aslo we need to upgrade if  react made on update so package.json does it automatically by carrot
+
+
+
+#parcel
+-dev our project
+-hist on a server
+-HMR - hot module replacement
+-file watching algorithm - written in c++
+-caching it every time so the build is faster
+-image optimization
+-minification
+-bundling
+-compressing -it will remove all the spaces and optimize it as much  as it could during building
+-consistent hashing ---homework
+-code splitting
+-Different bundle -support older version 
+-diagonstic -like compiler
+-error handling
+-tree shaking-remove unused code 
+-Different build for dev and production 
