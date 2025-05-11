@@ -14,7 +14,7 @@ in package-lock there is integrity to verify the version on production site and 
 node modules -when we install parcel the parcel is has dependencies (i.e) the parcel  cannot run on own it is dependent on some other packages 
 
 
-even if i delete the package.json and package-lock.json is there we can delete the node modules
+even if i delete the  node modules ,package.json and package-lock.json is there we can install it
 
 
 git origin means Url
