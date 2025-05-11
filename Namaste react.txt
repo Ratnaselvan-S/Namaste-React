@@ -1,19 +1,19 @@
-npx parcel index.html -- instead of this i can put the parcel index.html in the package.json file and just put npm run start
+
+passing a prop is just passing arugument to the component 
+just like function call (arg)
+
+dynamically passing means through props we can pass
+
+configdrivenUI-our website is built by data (controlling ur data using config )(suppose if we are in bengalore then the data shown in bangalore is different (restaurent) likewise
+if we are in other state it will bring the data according to the state  )
 
 
-jsx is like html like syntax in javascript file
+optional chaining ----homework
 
+map,list,reduce--aksay saini yt 
 
-const heading=<h1> hello worls</h1> here the javascript cannt understand the jsx syntax because javascript engine understands only es(ecma script) and here the jsx is converted
-into first  react.createelement it is done by parcel but parcel is a manager its dependensies such as babel is responsible for its conversion
+need to pass key on all the map
 
+react official document says that in map dont use index as key
 
-and babel also convert browser compactible js 
-
-give an attribute to jsx give it is camel casing
-
-
-component composition ---it is nothing but using two component  inside a same  javascript file
-
-
-while injecting any javascript code like '{} ' it usually escaapes that is it ssnitize the code so that the cross site scripting ccan be prevented
+see the document for index
