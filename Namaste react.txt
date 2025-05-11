@@ -5,7 +5,7 @@ jsx is like html like syntax in javascript file
 
 
 const heading=<h1> hello worls</h1> here the javascript cannt understand the jsx syntax because javascript engine understands only es(ecma script) and here the jsx is converted
-into react element(object) it is done by parcel but parcel is a manager its dependensies such as babel is responsible for its conversion
+into first  react.createelement it is done by parcel but parcel is a manager its dependensies such as babel is responsible for its conversion
 
 
 and babel also convert browser compactible js 
@@ -13,7 +13,7 @@ and babel also convert browser compactible js
 give an attribute to jsx give it is camel casing
 
 
-component composition ---it is nothing but using two component i.e function inside a component
+component composition ---it is nothing but using two component  inside a same  javascript file
 
 
 while injecting any javascript code like '{} ' it usually escaapes that is it ssnitize the code so that the cross site scripting ccan be prevented
