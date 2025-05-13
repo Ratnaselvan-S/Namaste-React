@@ -1,19 +1,34 @@
-
-passing a prop is just passing arugument to the component 
-just like function call (arg)
-
-dynamically passing means through props we can pass
-
-configdrivenUI-our website is built by data (controlling ur data using config )(suppose if we are in bengalore then the data shown in bangalore is different (restaurent) likewise
-if we are in other state it will bring the data according to the state  )
+two types of export and import 
 
 
-optional chaining ----homework
+Default export
 
-map,list,reduce--aksay saini yt 
+export default component
+import component from 'path'
 
-need to pass key on all the map
 
-react official document says that in map dont use index as key
 
-see the document for index
+names export
+
+export const logo_url
+import {logo_url} from 'path'
+
+
+can i use both the default and named with the same file
+
+/* Components of Our Food-Order App
+ * Header
+ * - Logo
+ * - Nav Items
+ * Body
+ * - Search Bar
+ * - Restaurant-Container
+ *  - Restaurant-Card
+ *    - Img
+ *    - Name of Res, Star Rating, cuisine, delivery time.
+ * Footer
+ * - Copyright
+ * - Links
+ * - Address
+ * - Contact
+ */
