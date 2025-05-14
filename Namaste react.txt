@@ -32,3 +32,27 @@ can i use both the default and named with the same file
  * - Address
  * - Contact
  */
+
+
+
+ react hooks is normal js function written by react developer
+
+ when we install npm i react all the one comes to node modules
+
+ whenever state variable changes react re render the component
+
+ reconcilation algorithm also known as react fibre
+
+ dom is like tree 
+
+ virtual dom is representation of actual dom    
+
+ virtual dom will have the object that is react element 
+
+
+ diff algorithm used to find diff on virtual and new dom ,react has object as in virtual dom it wont check the html tag or something
+
+
+ read react  fibre github acdlite
+
+ read about usestate why it is workig like that and why they need the function for updating
