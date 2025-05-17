@@ -1,58 +1,15 @@
-two types of export and import 
+Monolith architecture 
 
+single responsibility principle
 
-Default export
-
-export default component
-import component from 'path'
-
-
-
-names export
-
-export const logo_url
-import {logo_url} from 'path'
-
-
-can i use both the default and named with the same file
-
-/* Components of Our Food-Order App
- * Header
- * - Logo
- * - Nav Items
- * Body
- * - Search Bar
- * - Restaurant-Container
- *  - Restaurant-Card
- *    - Img
- *    - Name of Res, Star Rating, cuisine, delivery time.
- * Footer
- * - Copyright
- * - Links
- * - Address
- * - Contact
- */
+microservices can be used for building project independently like ui,backend,database,sms etc then these service will be diployed on different port and mapped under single domain
 
 
 
- react hooks is normal js function written by react developer
-
- when we install npm i react all the one comes to node modules
-
- whenever state variable changes react re render the component
-
- reconcilation algorithm also known as react fibre
-
- dom is like tree 
-
- virtual dom is representation of actual dom    
-
- virtual dom will have the object that is react element 
+cors youtube video akshay saini -----homework       
 
 
- diff algorithm used to find diff on virtual and new dom ,react has object as in virtual dom it wont check the html tag or something
+conditional rendering it will render component based on condition 
 
 
- read react  fibre github acdlite
-
- read about usestate why it is workig like that and why they need the function for updating
+code slow and question everything like why you are writing this can it be done any way like that etc

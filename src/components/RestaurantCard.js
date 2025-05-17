@@ -8,7 +8,7 @@ const RestaurantCard = (props) => {
     avgRating,
     costForTwo,
     deliveryTime,
-  } = resData?.data;
+  } = resData?.info;
 
   return (
     <div
@@ -21,8 +21,7 @@ const RestaurantCard = (props) => {
         className="res-logo"
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/v1661891862/" +
-          cloudinaryImageId +
-          ".jpg"
+          cloudinaryImageId
         }
         alt="Biryani"
       />
