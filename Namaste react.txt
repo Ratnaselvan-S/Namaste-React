@@ -1,15 +1,17 @@
-Monolith architecture 
+on every render useeffect is called if no dependancy
 
-single responsibility principle
+if it has depandancy then it rerenders the dependancy array updated [btnName]
 
-microservices can be used for building project independently like ui,backend,database,sms etc then these service will be diployed on different port and mapped under single domain
-
-
-
-cors youtube video akshay saini -----homework       
+if  depandancy array empty  then only initial render
 
 
-conditional rendering it will render component based on condition 
+React router document
+
+first createbrowser router this will provide the config for the router  then reactbrowser provide need to render on the root to provide the config 
 
 
-code slow and question everything like why you are writing this can it be done any way like that etc
+create a component tamplate by writing rafce
+
+userouteerror provided by react-router-dom for putting information on what type of error
+
+client side routing implementation on react(single page routing)
