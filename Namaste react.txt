@@ -1,25 +1,8 @@
-why we need to always write super(props) in class based component ----homework
+Usehook custom we have created while revisesee it once
 
 
+and lazy loading is also called {chunk ,code splitting ,dynamic bundling ,Lazy loading ,on demand loading ,dynamic import }
 
-never update direstly the class based state variable
+lazy loading is important and we used it with suspence so that while the import downloaded we can show fallback such as loader
 
-this.setstate need to check how it will only changes the portion of the varaible
-
-
-parent constructor called
-parent render called
-child constructor called
-child render called
-child componentdidmount called
-parent  componentdidmount called
-
-
-
-render  phase       }         
-commit phase        } react lifecycle diagram refer projects.wojteckmaj
-
-
-
-
-so  useeffect return  takes a function which is same as componentdidunmount
+            
