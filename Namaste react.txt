@@ -1,17 +1,25 @@
-on every render useeffect is called if no dependancy
-
-if it has depandancy then it rerenders the dependancy array updated [btnName]
-
-if  depandancy array empty  then only initial render
+why we need to always write super(props) in class based component ----homework
 
 
-React router document
 
-first createbrowser router this will provide the config for the router  then reactbrowser provide need to render on the root to provide the config 
+never update direstly the class based state variable
+
+this.setstate need to check how it will only changes the portion of the varaible
 
 
-create a component tamplate by writing rafce
+parent constructor called
+parent render called
+child constructor called
+child render called
+child componentdidmount called
+parent  componentdidmount called
 
-userouteerror provided by react-router-dom for putting information on what type of error
 
-client side routing implementation on react(single page routing)
+
+render  phase       }         
+commit phase        } react lifecycle diagram refer projects.wojteckmaj
+
+
+
+
+so  useeffect return  takes a function which is same as componentdidunmount
