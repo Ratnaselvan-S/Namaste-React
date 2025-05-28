@@ -1,0 +1,25 @@
+Episode 10-
+
+
+different type os styles to use 
+
+
+-first is common index.css
+-sass and scss
+-big induustry use styled-component
+-material ui 
+-bootstrap 
+-chakra ui
+-ant design
+
+
+Episode 11
+
+if the child component each has state of its own to manage and if it is not poosiilbe then we should put the state to its parent to control it 
+
+
+controlled component means the child component is controlled by parent 
+
+uncontrolled component means the child component is uncontrolled meaning it has its own state
+
+lifting state app ---homework

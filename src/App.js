@@ -1,25 +1,69 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
 
-function App() {
+// import Contact from "./components/Contact";
+import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
+const About = lazy(() => {
+  return import("./components/About");
+});
+
+const Contact = lazy(() => {
+  return import("./components/Contact");
+});
+
+const AppLayout = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <Outlet />
+      <Footer />
     </div>
   );
-}
+};
 
-export default App;
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: (
+          <Suspense fallback={<h1>Loading .....</h1>}>
+            <About />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/contact",
+        element: (
+          <Suspense fallback={<h1>Loading .....</h1>}>
+            <Contact />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/restaurantmenu/:id",
+        element: <RestaurantMenu />,
+      },
+    ],
+    errorElement: <Error />,
+  },
+]);
+
+const AppInitializer = () => {
+  return <RouterProvider router={appRouter} />;
+};
+
+export default AppInitializer;
