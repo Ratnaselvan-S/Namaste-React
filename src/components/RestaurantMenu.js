@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 const RestaurantMenu = () => {
   const [arrayData, setArrayData] = useState([]);
   const resId = useParams();
+  const [accordianState, setAccordianState] = useState(false);
+  const [arrayIndex, setArrayIndex] = useState(0);
 
   useEffect(() => {
     fetchData();
@@ -30,7 +32,15 @@ const RestaurantMenu = () => {
             key={index}
           >
             {data?.card?.card?.title && (
-              <h1 className="w-[45vh]  bg-orange-200 px-4 py-2 m-3 rounded-lg">
+              <h1
+                className="w-[45vh] bg-orange-200 px-4 py-2 m-3 rounded-lg"
+                onClick={() => {
+                  setArrayIndex(index);
+                  setAccordianState(
+                    (prevState) => index !== arrayIndex || !prevState
+                  );
+                }}
+              >
                 {data?.card?.card?.title} (
                 {data?.card?.card?.itemCards?.length > 0
                   ? data?.card?.card?.itemCards?.length
@@ -38,12 +48,13 @@ const RestaurantMenu = () => {
                 )
               </h1>
             )}
-            <div>
-              {data?.card?.card?.itemCards?.map((item, idx) => {
-                console.log(item?.card?.info?.name);
-                return <h5 key={idx}>{item?.card?.info?.name}</h5>;
-              })}
-            </div>
+            {accordianState && index === arrayIndex && (
+              <div>
+                {data?.card?.card?.itemCards?.map((item, idx) => {
+                  return <h5 key={idx}>{item?.card?.info?.name}</h5>;
+                })}
+              </div>
+            )}
           </div>
         );
       })}

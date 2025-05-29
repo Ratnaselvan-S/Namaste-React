@@ -23,3 +23,16 @@ controlled component means the child component is controlled by parent
 uncontrolled component means the child component is uncontrolled meaning it has its own state
 
 lifting state app ---homework
+
+
+Episode 11 Part 2
+
+usecontext 
+
+first create constant in some util file  {Createcontext} in that file and export 
+
+in the function put usecontext() funtion inside it pas the uil file  it will give the data from the  create context 
+
+in class based component we have to use context.consumer to use the context 
+
+in funtion if we need to chnage the value we have to wrap the component in context provider and pass the value on the provider to change ti  duynamically

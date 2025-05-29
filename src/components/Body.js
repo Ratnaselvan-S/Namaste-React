@@ -1,13 +1,16 @@
 import RestaurantCard, { withHigherOerder } from "./RestaurantCard";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import useRestaurantFetachData from "../utils/useRestaurantFetachData";
 import { Link } from "react-router-dom";
+import UserContest from "../utils/UserContext";
 
 const Body = () => {
   const [copyData, setCopyData] = useState([]);
   const [searchData, setsearchData] = useState("");
   const HigherOrder = withHigherOerder(RestaurantCard);
   const arrayData = useRestaurantFetachData();
+
+  const { loggedinuser, setUserName } = useContext(UserContest);
 
   useEffect(() => {
     if (arrayData && arrayData.length > 0) {
@@ -36,6 +39,13 @@ const Body = () => {
         >
           Search
         </button>
+        <input
+          type="text"
+          placeholder="User name"
+          value={loggedinuser}
+          onChange={(e) => setUserName(e.target.value)}
+          className="border-solid border-2 mx-4 px-2 py-1 rounded-md"
+        />
       </div>
       <div className="flex flex-wrap justify-center">
         {copyData.map((restaurant) => (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,6 +9,7 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import UserContest from "./utils/UserContext";
 
 const About = lazy(() => {
   return import("./components/About");
@@ -19,12 +20,16 @@ const Contact = lazy(() => {
 });
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-      <Footer />
-    </div>
+    <UserContest.Provider value={{ loggedinuser: userName, setUserName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </UserContest.Provider>
   );
 };
 

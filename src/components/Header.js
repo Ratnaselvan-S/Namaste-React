@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import { useContext } from "react";
+import UserContest from "../utils/UserContext";
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
+  const { loggedinuser } = useContext(UserContest);
   return (
     <div className=" flex justify-between bg-purple-100 items-center mb-4">
       <div className="w-32">
@@ -44,6 +47,7 @@ const Header = () => {
               Cart
             </Link>
           </li>
+          <li className="px-4">{loggedinuser}</li>
         </ul>
       </div>
     </div>
