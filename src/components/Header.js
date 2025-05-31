@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { useContext } from "react";
+import { useSelector } from "react-redux";
 import UserContest from "../utils/UserContext";
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const { loggedinuser } = useContext(UserContest);
+  const cartItems = useSelector((store) => store.cart.items);
+
   return (
     <div className=" flex justify-between bg-purple-100 items-center mb-4">
       <div className="w-32">
@@ -43,8 +46,11 @@ const Header = () => {
             </Link>
           </li>
           <li className="px-4">
-            <Link className="hover:border border-red-600 hover:px-3 hover:py-3 ">
-              Cart
+            <Link
+              className="hover:border border-red-600 hover:px-3 hover:py-3 "
+              to={"/cart"}
+            >
+              Cart - {cartItems.length} items
             </Link>
           </li>
           <li className="px-4">{loggedinuser}</li>

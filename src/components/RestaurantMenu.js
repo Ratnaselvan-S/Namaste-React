@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import { addItems } from "../utils/cartSlice";
 const RestaurantMenu = () => {
   const [arrayData, setArrayData] = useState([]);
   const resId = useParams();
@@ -23,17 +25,22 @@ const RestaurantMenu = () => {
     }
   };
 
+  const dispatch = useDispatch();
+  const handliclick = (props) => {
+    dispatch(addItems(props));
+  };
+
   return (
     <div>
       {arrayData?.map((data, index) => {
         return (
           <div
-            className="flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center w-6/12 mx-auto"
             key={index}
           >
             {data?.card?.card?.title && (
               <h1
-                className="w-[45vh] bg-orange-200 px-4 py-2 m-3 rounded-lg"
+                className="w-3/4 bg-orange-200 px-4 py-2 m-3 rounded-lg"
                 onClick={() => {
                   setArrayIndex(index);
                   setAccordianState(
@@ -51,7 +58,19 @@ const RestaurantMenu = () => {
             {accordianState && index === arrayIndex && (
               <div>
                 {data?.card?.card?.itemCards?.map((item, idx) => {
-                  return <h5 key={idx}>{item?.card?.info?.name}</h5>;
+                  return (
+                    <div className="flex justify-between align-middle my-4 ">
+                      <h5 key={idx} className="my-auto">
+                        {item?.card?.info?.name}
+                      </h5>
+                      <button
+                        className="border rounded-lg p-2 "
+                        onClick={() => handliclick(item)}
+                      >
+                        add
+                      </button>
+                    </div>
+                  );
                 })}
               </div>
             )}

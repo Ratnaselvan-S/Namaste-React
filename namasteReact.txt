@@ -1,38 +1,30 @@
-Episode 10-
+zustand is like same as redux library ,this is gaining popularity 
 
 
-different type os styles to use 
+dispatch an action on add button then that action will call a function and then the fuction will modify the cart data (the function is known as reducer) this 
+will update the slice of the redux store 
 
 
--first is common index.css
--sass and scss
--big induustry use styled-component
--material ui 
--bootstrap 
--chakra ui
--ant design
+we use selector to get the data from redux store (selector is subscribe to the store so whenever the data changes the data automaticaaly changes on the ui)
 
 
-Episode 11
 
-if the child component each has state of its own to manage and if it is not poosiilbe then we should put the state to its parent to control it 
-
-
-controlled component means the child component is controlled by parent 
-
-uncontrolled component means the child component is uncontrolled meaning it has its own state
-
-lifting state app ---homework
+i have pasted the redux detailed photo on the image make it for reference
 
 
-Episode 11 Part 2
+##redux install and config
 
-usecontext 
+--install @reduxjs/toolkit and react-redux
+--Build our store 
+--connect the store to our app
+--create an slice (cart)
 
-first create constant in some util file  {Createcontext} in that file and export 
 
-in the function put usecontext() funtion inside it pas the uil file  it will give the data from the  create context 
+selector is justa hook to subrcribe to the data 
+immer --redux uses to update the immutable state to state here it will compare the state with older mutable state and return the state new value
+if we need to console log the state in redux di this current(state)
 
-in class based component we have to use context.consumer to use the context 
 
-in funtion if we need to chnage the value we have to wrap the component in context provider and pass the value on the provider to change ti  duynamically
+homework rtk query need to read this 
+
+middleware,thunks old version  and now we are using 
