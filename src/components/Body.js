@@ -27,6 +27,7 @@ const Body = () => {
           value={searchData}
           onChange={(e) => setsearchData(e.target.value)}
           className="border-solid border-2 mx-4 px-2 py-1 rounded-md"
+          data-testid="res_inp"
         />
         <button
           className="px-4 py-2 bg-green-200 rounded-lg"
@@ -43,6 +44,7 @@ const Body = () => {
           type="text"
           placeholder="User name"
           value={loggedinuser}
+          data-testid="search_name"
           onChange={(e) => setUserName(e.target.value)}
           className="border-solid border-2 mx-4 px-2 py-1 rounded-md"
         />
@@ -52,6 +54,7 @@ const Body = () => {
           <Link
             key={restaurant.info.id}
             to={"restaurantmenu/" + restaurant.info.id}
+            data-testid="res_card"
           >
             {restaurant.info.promoted ? (
               <HigherOrder resData={restaurant} />

@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import UserContest from "../utils/UserContext";
+import React from "react";
 
 const Header = () => {
   const onlineStatus = useOnlineStatus();
   const { loggedinuser } = useContext(UserContest);
   const cartItems = useSelector((store) => store.cart.items);
+  const [loginbutton, setLoginButton] = useState("login");
 
+  const handlelogin = () => {
+    loginbutton === "logout"
+      ? setLoginButton("login")
+      : setLoginButton("logout");
+  };
   return (
     <div className=" flex justify-between bg-purple-100 items-center mb-4">
       <div className="w-32">
@@ -53,7 +60,14 @@ const Header = () => {
               Cart - {cartItems.length} items
             </Link>
           </li>
-          <li className="px-4">{loggedinuser}</li>
+          <li className="px-4">
+            <Link className="hover:border border-red-600 hover:px-3 hover:py-3 ">
+              <button onClick={handlelogin}>{loginbutton}</button>
+            </Link>
+          </li>
+          <li className="px-4" data-testid={"name"}>
+            {loggedinuser}
+          </li>
         </ul>
       </div>
     </div>

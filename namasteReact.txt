@@ -1,30 +1,55 @@
-zustand is like same as redux library ,this is gaining popularity 
+Types of testing
+
+-unit testing 
+-Integration testing
+- end to end testing 
+
+--------------------------------------------------------------
+--testing library (React testing library -@testing-library/react) it needs jest 
+--jest is the testing library for javascript 
+--the jest testing environment uses jsdom library to execute the react component it is like browser
+and jest does not understand modern es6 js and react jsx we need to download and config bebel-env and bebel-react
 
 
-dispatch an action on add button then that action will call a function and then the fuction will modify the cart data (the function is known as reducer) this 
-will update the slice of the redux store 
+
+__means dunder test
 
 
-we use selector to get the data from redux store (selector is subscribe to the store so whenever the data changes the data automaticaaly changes on the ui)
+---------------------------------------------------------------------
+to check whether the given component jsx is present in the document ,we use a library( "@testing-library/jest-dom": "^6.6.3",) this will have the function {tobeinthedocument()}
+
+
+.getbyRole() tag name
+
+.getbytext() string int he component
+
+.getbyplaceholdername() checks any placeholder name is there or notin input
+
+if multiple element present in screen then we can give  getallby if not put it gives error
+
+then if multiple we can put length tobe(2)
+
+
+-----------------------
+describe is just used to group the test cases it also epect string and function
+
+instead of "test" some people used to write "it" there is no difference here 
 
 
 
-i have pasted the redux detailed photo on the image make it for reference
+----------------------------------
+we can pass the button name login as regex also this willl just say if the word is present or not (it is just not find the exact value of string if cart string is present then the case is passes)
 
 
-##redux install and config
-
---install @reduxjs/toolkit and react-redux
---Build our store 
---connect the store to our app
---create an slice (cart)
+we can fire the onclick even using fireevent in testing
 
 
-selector is justa hook to subrcribe to the data 
-immer --redux uses to update the immutable state to state here it will compare the state with older mutable state and return the state new value
-if we need to console log the state in redux di this current(state)
+----------------------------------
+npm run test everytime we need to run this so instead we can write watch-test :jest --watch
 
+-------------------------------------
 
-homework rtk query need to read this 
+whenever  there is async or state update we need to put "act" funtion  in testing so that it wont fail
 
-middleware,thunks old version  and now we are using 
+----------------------------------------
+before all,before each ,after all ,after each
