@@ -1,38 +1,196 @@
-Episode 10-
+
+first step :
+    -requirement clarification (discuss the features)
+    -Tech stack (Tailwind ,typescript,redux or context api)
+    -we have to check whether i am talking to tech person or not if tech person i will ask the techstack 
+    -react router dom
+    -redux
+    -bundler 
+    -jest
+
+reportwebvitals -this will keep track of the performace and analytics of the users experience of our web we can post the web report to google analytics to observe the ux of 
+the app Metric	Purpose
+LCP (Largest Contentful Paint)	Measures loading performance
+FID (First Input Delay)	Measures interactivity
+CLS (Cumulative Layout Shift)	Measures visual stability
+FCP (First Contentful Paint)	Measures first render
+TTFB (Time to First Byte)	Measures backend/server response time
+
+strickmode-this re renders every thing that renders one time and check any bug this is development only thing
+
+Debouncing :
+
+useEffect(()=>{
+    const timer=setTimeout(()=>Api call(),200)
+    return  ()=>{
+        cleartimeout(timer)
+    }
+},[search])
+
+first when the useeffect runs in browser the settimeout will be called and the timer will run on browser then if we type again then the return will clearout and agin the timer starts
+from start 
 
 
-different type os styles to use 
+we can store the cache of the search result in redux example we can store it as object because that is like big 0(1) this is far more fast that array which is big 0(n)
+we will store it and put a condition to see whether the search params is there in cache or not if cache we can set the cache api  result and we do need to  make api call again
 
 
--first is common index.css
--sass and scss
--big induustry use styled-component
--material ui 
--bootstrap 
--chakra ui
--ant design
+LRU data structures  
+
+n level comments ,in reddit n level nested  
+
+we will call the components function inside the function
+
+import { useState } from "react";
+
+const COMMENTS = [
+  {
+    name: "Ratna",
+    message: "I am a super start",
+    replies: [
+      {
+        name: "Ratna",
+        message: "I am a super start",
+        replies: [
+          { name: "Ratna", message: "I am a super start" },
+          { name: "Ratna", message: "I am a super start" },
+          { name: "Ratna", message: "I am a super start" },
+          { name: "Ratna", message: "I am a super start" },
+        ],
+      },
+      { name: "Ratna", message: "I am a super start" },
+      { name: "Ratna", message: "I am a super start" },
+      {
+        name: "Ratna",
+        message: "I am a super start",
+        replies: [
+          {
+            name: "Ratna",
+            message: "I am a super start",
+            replies: [
+              {
+                name: "Ratna",
+                message: "I am a super start",
+                replies: [
+                  {
+                    name: "Ratna",
+                    message: "I am a super start",
+                    replies: [
+                      {
+                        name: "Ratna",
+                        message: "I am a super start",
+                        replies: [
+                          {
+                            name: "Ratna",
+                            message: "I am a super start",
+                            replies: [
+                              { name: "Ratna", message: "I am a super start" },
+                            ],
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+              { name: "Ratna", message: "I am a super start" },
+            ],
+          },
+        ],
+      },
+      { name: "Ratna", message: "I am a super start" },
+    ],
+  },
+  { name: "Ratna", message: "I am a super start" },
+  { name: "Ratna", message: "I am a super start" },
+];
+
+const Comments = ({ data }) => {
+  const { name, message } = data;
+  return (
+    <div
+      style={{
+        display: "flex",
+        backgroundColor: " rgb(201, 200, 200)",
+        margin: "3px",
+        width: "50%",
+      }}
+    >
+      <img
+        src="https://t4.ftcdn.net/jpg/02/29/75/83/360_F_229758328_7x8jwCwjtBMmC6rgFzLFhZoEpLobB6L8.jpg"
+        height={"50px"}
+        width={"50px"}
+      />
+      <div>
+        <h3>{name}</h3>
+        <p>{message}</p>
+      </div>
+    </div>
+  );
+};
+
+const CommentList = ({ comments }) => {
+  const [showreplies, setShowReplies] = useState(false);
+  return comments.map((data, index) => {
+    return (
+      <div>
+        <Comments data={data} />
+        <div style={{ borderLeft: "1px solid black", paddingLeft: "20px" }}>
+          {data.replies && (
+            <div onClick={() => setShowReplies(true)}>
+              <p style={{ cursor: "pointer" }}>
+                {!showreplies && "Show replies"}
+              </p>
+
+              {showreplies && <CommentList comments={data.replies} />}
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  });
+};
+
+const Contact = () => {
+  return (
+    <div>
+      <CommentList comments={COMMENTS} />
+    </div>
+  );
+};
+
+export default Contact;
 
 
-Episode 11
-
-if the child component each has state of its own to manage and if it is not poosiilbe then we should put the state to its parent to control it 
-
-
-controlled component means the child component is controlled by parent 
-
-uncontrolled component means the child component is uncontrolled meaning it has its own state
-
-lifting state app ---homework
+Live data 
+---------
 
 
-Episode 11 Part 2
+      challenges 
+      -----------
 
-usecontext 
+      ->get data live
+      ->re render on data to show on ui
 
-first create constant in some util file  {Createcontext} in that file and export 
 
-in the function put usecontext() funtion inside it pas the uil file  it will give the data from the  create context 
+      data
+      ----
 
-in class based component we have to use context.consumer to use the context 
+      websocket -- here once the connection is made it will have two way communication on each millisecond (Stock markett app ) where every millisecond is crucial (whatsapp)
+      api pooling -- after every 10 seconds the ui  is checked on the backend and keeps on pooling the data from backend after every 10 seconds (Gmail),(crizbuzz) here
+                     the application is updated on every 25 seconds 
 
-in funtion if we need to chnage the value we have to wrap the component in context provider and pass the value on the provider to change ti  duynamically
+      youtube is doing api pooling on every 1.5 sec
+
+
+      when  we code we should imagine what it will look like ,like if we are building the component then we should imagine without seeing the ui we should imagine what it will look like
+
+
+the pooling is done in useeffect using setinterval
+
+
+the ui does not break on youtube live commenst because they will remove the comment on each 230 comments and also they are doing pooling on each 
+1500  ms 
+
+
+
